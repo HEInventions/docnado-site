@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     
-    <title>Images</title>
+    <title>Extra Tips</title>
 
 
     <script src="../../lib/jquery-3.2.1.slim.min.js"></script>
@@ -119,7 +119,7 @@
 
                 
                 <li>
-                    <input type="checkbox"  id="#nav-Document">
+                    <input type="checkbox" checked id="#nav-Document">
                     <label for="#nav-Document">
                         <i class="tree-icon fa fa-fw fa-chevron-down"></i>
                         <span>Document</span>
@@ -156,7 +156,7 @@
                 
                 <li class="tree-leaf">
                     
-                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
                     
                     <a href="../documents\images.html"><span>Images</span></a>
                 </li>
@@ -229,7 +229,7 @@
 
                 
                 <li>
-                    <input type="checkbox" checked id="#nav-Tooling">
+                    <input type="checkbox"  id="#nav-Tooling">
                     <label for="#nav-Tooling">
                         <i class="tree-icon fa fa-fw fa-chevron-down"></i>
                         <span>Tooling</span>
@@ -275,7 +275,7 @@
                 
                 <li class="tree-leaf">
                     
-                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
                     
                     <a href="../tooling\extra_tips.html"><span>Extra Tips</span></a>
                 </li>
@@ -333,14 +333,14 @@
 
     
     <div class="page-header">
-        <h1 class="display-4">Images </h1>
-        <p class="lead">Docnado Markdown Quick Reference</p>
+        <h1 class="display-4">Extra Tips </h1>
+        <p class="lead">Other handy tools that work with Docnado</p>
         <p>
             <span class="version">V1.0.0</span>
             
             <img src="http://www.gravatar.com/avatar/14b8fced1badbd22a62b17db6def89b8?s=100&amp;r=g&amp;d=retro" class="avatar" alt="enq@heinventions.com" title="enq@heinventions.com" />
             
-            <small>last updated <span>3 weeks ago</span> on <span>2018/10/12</span></small>
+            <small>last updated <span>4 days ago</span> on <span>2018/11/01</span></small>
         </p>
 
         
@@ -349,57 +349,19 @@
     
 
     <div class="page-md">
-        <p>Embedding images in your docnado documents follows a similar syntax to <a href="links.html">links</a>, but should be preceded by an exclamation mark (<code>!</code>). In this case the text within square brackets functions as image alt-text.</p>
-<pre><code class="markdown">Inline
-![docnado](assets/logo.png &quot;docnado, blow your documentation away!&quot;)
-
-![alt text][logo]
-
-[logo]: /assets/logo.png &quot;Logo Title Text 2&quot;
+        <p>One advantage Docnado offers over other documentation services is it's ability to be enhanced by using other tools, instead of waiting for the upstream developer to add the features you need <em>now</em> or committing the time to developing them yourself you can use any other existing software designed to handle markdown or plain text files.</p>
+<p>This page isn't really part of the tutorial on our system, think of it more as handy cheat sheet on how to use other tools with Docnado documents an an example of the benefits of storing your documentation in plain text.</p>
+<h2 id="searching">Searching</h2>
+<p>Finding a word or phrase in your entire Docnado project can made simple with grep.</p>
+<pre><code class="bash">$ grep -rnw docs/*/*.md -e 'unordered list'
+docs/documents/lists.md:28:+ An unordered list created with a plus.
+docs/documents/lists.md:48:+ An unordered list created with a plus.
 </code></pre>
 
-<p><img alt="docnado" src="assets/logo.png" title="docnado, blow your documentation away!" /></p>
-<p><img alt="docnado Image 2 " src="assets/logo.png" title="docnado, blow your documentation away!" /></p>
-<p>Docnado also supports the styling of images, this can be done by adding an inline style tag after your image.</p>
-<pre><code class="markdown">&lt;!-- Example --&gt;
-&lt;!-- A row of 3 images --&gt;
-![](assets/logo.png){: .small}
-![](assets/logo.png){: .small}
-![](assets/logo.png){: .small}
+<h2 id="spell-cheking">Spell Cheking</h2>
+<p>There are many handy tools for spellchecking plain text documents. For example:</p>
+<pre><code class="bash">aspell check docs/documents/text.md 
 </code></pre>
-
-<p><img alt="" class="small" src="assets/logo.png" />
-<img alt="" class="small" src="assets/logo.png" />
-<img alt="" class="small" src="assets/logo.png" /></p>
-<pre><code class="markdown">&lt;!-- Style classes can be combined. --&gt;
-![](assets/logo.png){: .small .noborder}
-</code></pre>
-
-<p><img alt="" class="small noborder" src="assets/logo.png" /></p>
-<pre><code class="markdown">&lt;!-- We can put them in the middle. --&gt;
-![](assets/logo.png){: .small .center}
-</code></pre>
-
-<p><img alt="" class="small center" src="assets/logo.png" /></p>
-<pre><code class="markdown">&lt;!-- Make them middle sized. --&gt;
-![](assets/logo.png){: .medium}
-</code></pre>
-
-<p><img alt="" class="medium" src="assets/logo.png" /></p>
-<pre><code class="markdown">&lt;!-- The default is actual width up to a max height of the document flow, and no higher than a single A4 page. --&gt;
-![](assets/logo.png)
-
-&lt;!-- The style class .large is the same as the default. --&gt;
-![](assets/logo.png){: .large}
-</code></pre>
-
-<p><img alt="" src="assets/logo.png" /></p>
-<p><img alt="" class="large" src="assets/logo.png" /></p>
-<p class="info">Unlike paragraphs, images are <em>inline</em> elements, so the style <code>{: .style-class}</code> needs to be on the same line as the element.</p>
-<pre><code class="markdown">This is an inline ![](assets/logo.png){: .icon} icon.
-</code></pre>
-
-<p>This is an inline <img alt="" class="icon" src="assets/logo.png" /> icon.</p>
     </div>
 
 
